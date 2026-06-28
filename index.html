@@ -25,14 +25,17 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar unique-nav" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">🎉 Reunion 2026</a>
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-emoji">🎊</span>
+                <span class="nav-logo-text">PSC <span class="logo-highlight">Reunion</span></span>
+            </a>
             <div class="nav-links" id="nav-menu">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="members.html" class="nav-link">Members</a>
-                <a href="payments.html" class="nav-link">Payments</a>
-                <a href="gallery.html" class="nav-link">Memories</a>
+                <a href="index.html" class="nav-link active">🏠 হোম</a>
+                <a href="members.html" class="nav-link">👥 সদস্যবৃন্দ</a>
+                <a href="payments.html" class="nav-link">💳 পেমেন্ট</a>
+                <a href="gallery.html" class="nav-link">📸 মনের ছবি</a>
             </div>
             <button class="nav-toggle" id="navToggle">
                 <span></span><span></span><span></span>
@@ -56,55 +59,72 @@
         </div>
 
         <div class="hero-content">
-            <div class="hero-badge-new">🎉 Let's Reunite</div>
+            <div class="hero-badge-new">🎊 চলো মিলি হই!</div>
             <h1 class="hero-big-title">
-                REUNION<br>
-                <span class="gradient-text-big">2026</span>
+                পি.এস.সি<br>
+                <span class="gradient-text-big">রিইউনিয়ন</span>
+                <br>২০২৬
             </h1>
-            <p class="hero-tagline">One Bond One Memory</p>
-            <p class="hero-sub">Same people, same vibes, new memories! ✨</p>
+            <p class="hero-tagline">একটা বন্ধ, একটা মনের সুর</p>
+            <p class="hero-funny">সেই একই মানুষগুলো, সেই একই গল্প — শুধু বয়স বেড়েছে! 😂</p>
+
+            <div class="hero-marquee">
+                <div class="marquee-inner">
+                    <span>💰 টাকা দাও, মজায় যাও</span>
+                    <span>📸 ছবি তুলো, সুন্দর হও</span>
+                    <span>🎉 বেড়াও, মাছ ধরো!</span>
+                    <span>🥘 খাও, পাও, ঘুমাও!</span>
+                    <span>💰 টাকা দাও, মজায় যাও</span>
+                    <span>📸 ছবি তুলো, সুন্দর হও</span>
+                    <span>🎉 বেড়াও, মাছ ধরো!</span>
+                    <span>🥘 খাও, পাও, ঘুমাও!</span>
+                </div>
+            </div>
 
             <div class="hero-pills">
-                <div class="pill">
+                <div class="pill pill-bounce">
                     <span class="pill-icon">📅</span>
-                    <span>October 2026</span>
+                    <span>অক্টোবর ২০২৬</span>
                 </div>
-                <div class="pill">
+                <div class="pill pill-bounce">
                     <span class="pill-icon">⏰</span>
-                    <span>10:00 AM</span>
+                    <span>সকাল ১০টা</span>
                 </div>
-                <div class="pill">
+                <div class="pill pill-bounce">
                     <span class="pill-icon">📍</span>
-                    <span>Our Village</span>
+                    <span>আমাদের গ্রাম</span>
                 </div>
             </div>
 
             <div class="hero-buttons">
-                <a href="members.html" class="btn btn-hero-primary">👥 View Members</a>
-                <a href="payments.html" class="btn btn-hero-secondary">💳 Payments</a>
+                <a href="members.html" class="btn btn-hero-primary">👥 সদস্যদের দেখো</a>
+                <a href="payments.html" class="btn btn-hero-secondary">💳 টাকা দাও</a>
             </div>
         </div>
 
         <!-- Countdown -->
         <div class="countdown-new">
-            <div class="cd-item">
-                <span class="countdown-number" id="cd-days">00</span>
-                <span class="cd-label">Days</span>
-            </div>
-            <div class="cd-separator">:</div>
-            <div class="cd-item">
-                <span class="countdown-number" id="cd-hours">00</span>
-                <span class="cd-label">Hours</span>
-            </div>
-            <div class="cd-separator">:</div>
-            <div class="cd-item">
-                <span class="countdown-number" id="cd-minutes">00</span>
-                <span class="cd-label">Minutes</span>
-            </div>
-            <div class="cd-separator">:</div>
-            <div class="cd-item">
-                <span class="countdown-number" id="cd-seconds">00</span>
-                <span class="cd-label">Seconds</span>
+            <h3 class="countdown-title">⏳ কতদিন বাকি?</h3>
+            <div class="cd-items">
+                <div class="cd-item">
+                    <span class="countdown-number" id="cd-days">00</span>
+                    <span class="cd-label">দিন</span>
+                </div>
+                <div class="cd-separator">:</div>
+                <div class="cd-item">
+                    <span class="countdown-number" id="cd-hours">00</span>
+                    <span class="cd-label">ঘণ্টা</span>
+                </div>
+                <div class="cd-separator">:</div>
+                <div class="cd-item">
+                    <span class="countdown-number" id="cd-minutes">00</span>
+                    <span class="cd-label">মিনিট</span>
+                </div>
+                <div class="cd-separator">:</div>
+                <div class="cd-item">
+                    <span class="countdown-number" id="cd-seconds">00</span>
+                    <span class="cd-label">সেকেন্ড</span>
+                </div>
             </div>
         </div>
     </section>

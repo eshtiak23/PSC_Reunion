@@ -91,6 +91,58 @@ input { border: none; outline: none; font-family: inherit; }
     font-weight: 800; font-size: 1.2rem;
     color: var(--purple);
 }
+.nav-logo-emoji {
+    font-size: 1.4rem;
+    animation: logoDance 3s ease-in-out infinite;
+    display: inline-block;
+}
+@keyframes logoDance {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-10deg) scale(1.1); }
+    50% { transform: rotate(0deg) scale(1); }
+    75% { transform: rotate(10deg) scale(1.1); }
+}
+.logo-highlight {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.unique-nav {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, var(--purple), var(--pink), var(--blue)) 1;
+}
+.unique-nav.scrolled {
+    border-bottom: 2px solid transparent !important;
+    border-image: linear-gradient(90deg, var(--purple), var(--pink), var(--blue)) 1 !important;
+}
+.unique-nav .nav-link {
+    border-radius: 20px !important;
+    transition: all 0.3s !important;
+    position: relative;
+    overflow: hidden;
+}
+.unique-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    width: 0; height: 2px;
+    background: linear-gradient(90deg, var(--purple), var(--pink));
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+.unique-nav .nav-link:hover::before,
+.unique-nav .nav-link.active::before {
+    width: 60%;
+}
+.unique-nav .nav-link:hover,
+.unique-nav .nav-link.active {
+    color: var(--purple);
+    background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(236,72,153,0.08));
+}
 .nav-links { display: flex; gap: 6px; }
 .nav-links a {
     padding: 8px 16px; border-radius: 8px;
@@ -198,8 +250,68 @@ input { border: none; outline: none; font-family: inherit; }
 .hero-sub {
     font-size: 1.05rem;
     color: var(--text-muted);
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     animation: fadeInUp 0.8s ease 0.3s backwards;
+}
+
+/* Funny hero text */
+.hero-funny {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-style: italic;
+    animation: fadeInUp 0.8s ease 0.35s backwards;
+    position: relative;
+    display: inline-block;
+}
+.hero-funny::before { content: '"'; color: var(--purple); font-weight: 900; font-size: 1.4rem; }
+.hero-funny::after { content: '"'; color: var(--purple); font-weight: 900; font-size: 1.4rem; }
+
+/* Marquee banner */
+.hero-marquee {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(139,92,246,0.1), rgba(236,72,153,0.1), rgba(59,130,246,0.1));
+    border-radius: 30px;
+    padding: 10px 0;
+    margin-bottom: 24px;
+    border: 1px solid rgba(139,92,246,0.15);
+    animation: fadeInUp 0.8s ease 0.38s backwards;
+}
+.marquee-inner {
+    display: flex; gap: 60px;
+    white-space: nowrap;
+    animation: marqueeScroll 20s linear infinite;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--purple);
+}
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Bouncy pills */
+.pill-bounce {
+    animation: pillBounce 2s ease-in-out infinite;
+}
+.pill-bounce:nth-child(2) { animation-delay: 0.3s; }
+.pill-bounce:nth-child(3) { animation-delay: 0.6s; }
+@keyframes pillBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Countdown title */
+.countdown-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--purple);
+    margin-bottom: 12px;
+}
+.cd-items {
+    display: flex; gap: 8px; align-items: center;
 }
 
 .hero-pills {
@@ -256,7 +368,8 @@ input { border: none; outline: none; font-family: inherit; }
 
 /* Countdown */
 .countdown-new {
-    display: flex; gap: 8px; align-items: center;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 10px;
     margin-top: 40px;
     animation: fadeInUp 0.8s ease 0.6s backwards;
 }
@@ -267,6 +380,11 @@ input { border: none; outline: none; font-family: inherit; }
     padding: 16px 22px; text-align: center;
     min-width: 80px;
     box-shadow: var(--shadow);
+    transition: all 0.3s;
+}
+.cd-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 .countdown-number {
     display: block;
