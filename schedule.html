@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reunion Event Schedule - View the complete plan for our reunion day with timeline, activities, and events.">
+    <meta name="keywords" content="reunion, schedule, event plan, timeline, school reunion">
+    <meta name="author" content="Reunion Team">
+    <title>Event Schedule | Reunion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body data-page="schedule">
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Reunion</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="schedule.html" class="nav-link active">Schedule</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="register.html" class="nav-link">Register</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="header-bg-particles" id="headerParticles"></div>
+        <div class="container">
+            <h1 class="page-title">Event Schedule</h1>
+            <p class="page-subtitle">Plan of the day</p>
+        </div>
+    </header>
+
+    <!-- Timeline Section -->
+    <section class="section schedule-section">
+        <div class="container">
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot purple"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">10:00 AM</div>
+                        <h3 class="timeline-title">🎉 Welcome & Registration</h3>
+                        <p class="timeline-desc">Meet up and get ready!</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot blue"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">11:00 AM</div>
+                        <h3 class="timeline-title">🎮 Fun Games</h3>
+                        <p class="timeline-desc">Games, laugh & win prizes!</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot pink"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">01:00 PM</div>
+                        <h3 class="timeline-title">🍽 Lunch Time</h3>
+                        <p class="timeline-desc">Let's eat together!</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot orange"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">03:00 PM</div>
+                        <h3 class="timeline-title">📸 Memories & Photos</h3>
+                        <p class="timeline-desc">Capture the moments!</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot green"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">05:00 PM</div>
+                        <h3 class="timeline-title">🎵 Music & Adda</h3>
+                        <p class="timeline-desc">Songs, stories & endless adda!</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 6 -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot yellow"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">07:00 PM</div>
+                        <h3 class="timeline-title">🏆 Prize Giving</h3>
+                        <p class="timeline-desc">Winners celebration!</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 7 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot purple"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">08:00 PM</div>
+                        <h3 class="timeline-title">👋 Goodbye</h3>
+                        <p class="timeline-desc">Until we meet again!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">Reunion</span>
+                </div>
+                <p class="footer-text">Bringing back the golden memories together.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="schedule.html">Schedule</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Reunion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="config.js"></script>
+    <script src="google-sheet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

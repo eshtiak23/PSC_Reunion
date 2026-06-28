@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track and manage reunion budget with transparent expense reporting and visual charts">
+    <meta name="keywords" content="reunion, budget, expenses, tracking, management">
+    <meta name="author" content="Reunion Team">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Budget Overview - Reunion 2026">
+    <meta property="og:description" content="Track every taka of our reunion budget">
+    <meta property="og:type" content="website">
+    <title>Budget Overview - Reunion 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-page="budget">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Mobile Nav Toggle -->
+    <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Reunion 2026</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="budget.html" class="nav-link active">Budget</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="register.html" class="btn btn-primary">Register Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="header-bg"></div>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">Budget Overview</h1>
+                <p class="page-subtitle">Track every taka</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Budget Cards -->
+    <section class="budget-cards-section">
+        <div class="container">
+            <div class="budget-cards">
+                <div class="budget-card glass-card">
+                    <div class="card-icon total">
+                        <span>৳</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Total Budget</h3>
+                        <p class="card-amount">৳25,000</p>
+                    </div>
+                </div>
+                <div class="budget-card glass-card">
+                    <div class="card-icon collected">
+                        <span>✓</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Collected</h3>
+                        <p class="card-amount">৳18,500</p>
+                    </div>
+                </div>
+                <div class="budget-card glass-card">
+                    <div class="card-icon spent">
+                        <span>↗</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Spent</h3>
+                        <p class="card-amount">৳7,200</p>
+                    </div>
+                </div>
+                <div class="budget-card glass-card">
+                    <div class="card-icon remaining">
+                        <span>⟵</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Remaining</h3>
+                        <p class="card-amount">৳6,500</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Bar -->
+    <section class="progress-section">
+        <div class="container">
+            <div class="progress-wrapper glass-card">
+                <div class="progress-header">
+                    <h3 class="progress-title">Budget Progress</h3>
+                    <span class="progress-percentage">74% completed</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 74%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="charts-section">
+        <div class="container">
+            <div class="charts-grid">
+                <div class="chart-card glass-card">
+                    <h3 class="chart-title">Collection Status</h3>
+                    <div class="chart-container">
+                        <canvas id="pie-chart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card glass-card">
+                    <h3 class="chart-title">Monthly Expenses</h3>
+                    <div class="chart-container">
+                        <canvas id="bar-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expense Table -->
+    <section class="expense-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recent Expenses</h2>
+            </div>
+            <div class="table-wrapper glass-card">
+                <table class="expense-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Amount (৳)</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Venue</td>
+                            <td>Hall booking advance</td>
+                            <td>3,000</td>
+                            <td>May 15</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Food</td>
+                            <td>Chicken order deposit</td>
+                            <td>2,000</td>
+                            <td>May 20</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Decorations</td>
+                            <td>Balloons and banners</td>
+                            <td>800</td>
+                            <td>Jun 1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Photography</td>
+                            <td>Photographer advance</td>
+                            <td>1,000</td>
+                            <td>Jun 5</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Prizes</td>
+                            <td>Game prizes budget</td>
+                            <td>400</td>
+                            <td>Jun 10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">Reunion 2026</span>
+                    <p class="footer-tagline">Bringing memories back to life</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="events.html">Events</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="budget.html">Budget</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Reunion Team. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="google-sheet.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize Charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Doughnut Chart - Collection Status
+            const pieCtx = document.getElementById('pie-chart').getContext('2d');
+            new Chart(pieCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Collected', 'Remaining'],
+                    datasets: [{
+                        data: [18500, 6500],
+                        backgroundColor: [
+                            'rgba(34, 197, 94, 0.8)',
+                            'rgba(100, 116, 139, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(34, 197, 94, 1)',
+                            'rgba(100, 116, 139, 0.8)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#e2e8f0',
+                                font: { family: 'Inter', size: 14 },
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ৳' + context.parsed.toLocaleString();
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            // Bar Chart - Monthly Expenses
+            const barCtx = document.getElementById('bar-chart').getContext('2d');
+            new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['May', 'Jun', 'Jul', 'Aug'],
+                    datasets: [{
+                        label: 'Expenses (৳)',
+                        data: [5000, 2200, 0, 0],
+                        backgroundColor: [
+                            'rgba(99, 102, 241, 0.7)',
+                            'rgba(168, 85, 247, 0.7)',
+                            'rgba(236, 72, 153, 0.7)',
+                            'rgba(251, 146, 60, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(99, 102, 241, 1)',
+                            'rgba(168, 85, 247, 1)',
+                            'rgba(236, 72, 153, 1)',
+                            'rgba(251, 146, 60, 1)'
+                        ],
+                        borderWidth: 2,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return '৳' + context.parsed.y.toLocaleString();
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#94a3b8', font: { family: 'Inter' } }
+                        },
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: {
+                                color: '#94a3b8',
+                                font: { family: 'Inter' },
+                                callback: function(value) {
+                                    return '৳' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

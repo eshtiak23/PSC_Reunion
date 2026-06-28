@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reunion 2026 - Join us for an unforgettable reunion celebration. Connect with old friends, share memories, and create new moments.">
+    <meta name="keywords" content="reunion, reunion 2026, class reunion, old friends, memories">
+    <meta name="author" content="Reunion 2026">
+    <meta property="og:title" content="Reunion 2026 - ONE BOND ONE MEMORY">
+    <meta property="og:description" content="Join us for an unforgettable reunion celebration.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Reunion 2026 - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body data-page="home">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>Loading Reunion 2026...</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🎉 Reunion 2026</a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link active">🏠 Home</a>
+                <a href="members.html" class="nav-link">👥 Members</a>
+                <a href="payments.html" class="nav-link">💳 Payments</a>
+                <a href="budget.html" class="nav-link">📊 Budget</a>
+                <a href="menu.html" class="nav-link">🍽️ Menu</a>
+                <a href="schedule.html" class="nav-link">📅 Schedule</a>
+                <a href="hall-of-fame.html" class="nav-link">🏆 Hall of Fame</a>
+                <a href="gallery.html" class="nav-link">🖼️ Gallery</a>
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">More ▾</button>
+                    <div class="dropdown-menu">
+                        <a href="announcements.html" class="dropdown-item">📢 Announcements</a>
+                        <a href="contact.html" class="dropdown-item">📞 Contact</a>
+                        <a href="admin.html" class="dropdown-item">⚙️ Admin</a>
+                    </div>
+                </div>
+            </div>
+            <a href="payments.html" class="nav-cta">💳 Contact Us</a>
+            <button class="nav-toggle" id="navToggle">☰</button>
+        </div>
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <span class="hero-badge">🎉 Let's Reunite</span>
+                <p class="hero-subtitle">Same people, same vibes, new memories! ✨</p>
+                <h1 class="hero-title">ONE BOND <br><span class="gradient-text">ONE MEMORY</span></h1>
+                <div class="hero-info-cards">
+                    <div class="glass-card info-card">
+                        <span class="info-icon">📅</span>
+                        <div>
+                            <p class="info-label">Date</p>
+                            <p class="info-value">October 2026</p>
+                        </div>
+                    </div>
+                    <div class="glass-card info-card">
+                        <span class="info-icon">⏰</span>
+                        <div>
+                            <p class="info-label">Time</p>
+                            <p class="info-value">10:00 AM</p>
+                        </div>
+                    </div>
+                    <div class="glass-card info-card">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <p class="info-label">Venue</p>
+                            <p class="info-value">Our Village</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="members.html" class="btn btn-primary">👥 View Members</a>
+                    <a href="payments.html" class="btn btn-secondary">💳 Pay Now</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-badge-circle">
+                    <div class="rotating-badge">
+                        <div class="badge-ring"></div>
+                        <div class="badge-center">
+                            <span class="badge-emoji">🎓</span>
+                            <p class="badge-text">Reunion 2026</p>
+                            <p class="badge-tagline">One Bond One Memory</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="glass-card stat-card">
+                    <span class="stat-icon">👥</span>
+                    <h3 class="stat-number" data-target="20">0</h3>
+                    <p class="stat-label">Total Members</p>
+                </div>
+                <div class="glass-card stat-card">
+                    <span class="stat-icon">✅</span>
+                    <h3 class="stat-number" data-target="16">0</h3>
+                    <p class="stat-label">Confirmed (80%)</p>
+                </div>
+                <div class="glass-card stat-card">
+                    <span class="stat-icon">⏳</span>
+                    <h3 class="stat-number" data-target="4">0</h3>
+                    <p class="stat-label">Coming Soon (20%)</p>
+                </div>
+                <div class="glass-card stat-card">
+                    <span class="stat-icon">🗓️</span>
+                    <h3 class="stat-number" id="daysToGo">--</h3>
+                    <p class="stat-label">Days to Go</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section" id="countdown-section">
+        <div class="container">
+            <h2 class="section-title">⏳ Countdown to Reunion</h2>
+            <div class="countdown-grid">
+                <div class="countdown-item glass-card">
+                    <span class="countdown-number" id="countdown-days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item glass-card">
+                    <span class="countdown-number" id="countdown-hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item glass-card">
+                    <span class="countdown-number" id="countdown-minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item glass-card">
+                    <span class="countdown-number" id="countdown-seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+            <p class="countdown-quote">"The best time to reconnect is now. The best people to reconnect with are you all!" 💛</p>
+        </div>
+    </section>
+
+    <!-- Payment Status Section -->
+    <section class="payment-section" id="payments">
+        <div class="container">
+            <h2 class="section-title">💳 Payment Status</h2>
+            <div class="glass-card payment-card">
+                <table class="payment-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Istiak Ahmed</td>
+                            <td><span class="status-badge paid">✅ Paid</span></td>
+                            <td>৳1,000</td>
+                        </tr>
+                        <tr>
+                            <td>Sabbir Hossain</td>
+                            <td><span class="status-badge paid">✅ Paid</span></td>
+                            <td>৳1,000</td>
+                        </tr>
+                        <tr>
+                            <td>Nusrat Jahan</td>
+                            <td><span class="status-badge paid">✅ Paid</span></td>
+                            <td>৳1,000</td>
+                        </tr>
+                        <tr>
+                            <td>Tahsin Rahman</td>
+                            <td><span class="status-badge due">⏳ Due</span></td>
+                            <td>৳1,000</td>
+                        </tr>
+                        <tr>
+                            <td>Farhana Akter</td>
+                            <td><span class="status-badge paid">✅ Paid</span></td>
+                            <td>৳1,000</td>
+                        </tr>
+                        <tr>
+                            <td>Rafi Ahmed</td>
+                            <td><span class="status-badge due">⏳ Due</span></td>
+                            <td>৳1,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="payment-actions">
+                    <a href="payments.html" class="btn btn-outline">View All →</a>
+                    <a href="payments.html" class="btn btn-primary">💳 Pay Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Poll Section -->
+    <section class="menu-poll-section" id="menu-poll">
+        <div class="container">
+            <h2 class="section-title">🍽️ Menu Poll</h2>
+            <div class="glass-card poll-card">
+                <div class="poll-items">
+                    <div class="poll-item">
+                        <div class="poll-info">
+                            <span class="poll-emoji">🍗</span>
+                            <span class="poll-name">Chicken Biryani</span>
+                            <span class="poll-count">50 votes</span>
+                        </div>
+                        <div class="poll-bar">
+                            <div class="poll-fill" data-votes="50" style="--bar-color: #8b5cf6;"></div>
+                        </div>
+                    </div>
+                    <div class="poll-item">
+                        <div class="poll-info">
+                            <span class="poll-emoji">🍛</span>
+                            <span class="poll-name">Tehari + Chicken Roast</span>
+                            <span class="poll-count">6 votes</span>
+                        </div>
+                        <div class="poll-bar">
+                            <div class="poll-fill" data-votes="6" style="--bar-color: #3b82f6;"></div>
+                        </div>
+                    </div>
+                    <div class="poll-item">
+                        <div class="poll-info">
+                            <span class="poll-emoji">🥘</span>
+                            <span class="poll-name">Khichuri + Chicken Curry</span>
+                            <span class="poll-count">4 votes</span>
+                        </div>
+                        <div class="poll-bar">
+                            <div class="poll-fill" data-votes="4" style="--bar-color: #ec4899;"></div>
+                        </div>
+                    </div>
+                    <div class="poll-item">
+                        <div class="poll-info">
+                            <span class="poll-emoji">🔥</span>
+                            <span class="poll-name">BBQ</span>
+                            <span class="poll-count">2 votes</span>
+                        </div>
+                        <div class="poll-bar">
+                            <div class="poll-fill" data-votes="2" style="--bar-color: #f97316;"></div>
+                        </div>
+                    </div>
+                </div>
+                <a href="menu.html" class="btn btn-primary poll-btn">🗳️ Vote Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Schedule Section -->
+    <section class="schedule-section" id="schedule">
+        <div class="container">
+            <h2 class="section-title">📅 Event Schedule</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #8b5cf6;">🕐</div>
+                    <div class="timeline-content glass-card">
+                        <h3>10:00 AM</h3>
+                        <p>🎉 Welcome & Registration</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #3b82f6;">🎮</div>
+                    <div class="timeline-content glass-card">
+                        <h3>11:00 AM</h3>
+                        <p>🕹️ Fun Games & Activities</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #ec4899;">🍽️</div>
+                    <div class="timeline-content glass-card">
+                        <h3>01:00 PM</h3>
+                        <p>🍛 Lunch Time</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #f97316;">📸</div>
+                    <div class="timeline-content glass-card">
+                        <h3>03:00 PM</h3>
+                        <p>📷 Memories & Photos</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #22c55e;">🎵</div>
+                    <div class="timeline-content glass-card">
+                        <h3>05:00 PM</h3>
+                        <p>🎶 Music & Adda</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #8b5cf6;">👋</div>
+                    <div class="timeline-content glass-card">
+                        <h3>08:00 PM</h3>
+                        <p>🥹 Goodbye & See You Again</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hall of Fame Section -->
+    <section class="hall-of-fame-section" id="hall-of-fame">
+        <div class="container">
+            <h2 class="section-title">🏆 Hall of Fame</h2>
+            <div class="fame-grid">
+                <div class="glass-card fame-card">
+                    <span class="fame-crown">👑</span>
+                    <span class="fame-emoji">⚡</span>
+                    <h3 class="fame-title">Fastest Payer</h3>
+                    <p class="fame-name">Istiak Ahmed</p>
+                    <span class="fame-trophy">🏆</span>
+                </div>
+                <div class="glass-card fame-card">
+                    <span class="fame-crown">👑</span>
+                    <span class="fame-emoji">🔥</span>
+                    <h3 class="fame-title">Most Active</h3>
+                    <p class="fame-name">Sabbir Hossain</p>
+                    <span class="fame-trophy">🏆</span>
+                </div>
+                <div class="glass-card fame-card">
+                    <span class="fame-crown">👑</span>
+                    <span class="fame-emoji">🎭</span>
+                    <h3 class="fame-title">Mood Maker</h3>
+                    <p class="fame-name">Tahsin Rahman</p>
+                    <span class="fame-trophy">🏆</span>
+                </div>
+                <div class="glass-card fame-card">
+                    <span class="fame-crown">👑</span>
+                    <span class="fame-emoji">💬</span>
+                    <h3 class="fame-title">Adda King/Queen</h3>
+                    <p class="fame-name">Nusrat Jahan</p>
+                    <span class="fame-trophy">🏆</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">🖼️ Memories Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item glass-card" data-src="https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Memory+1">
+                    <div class="gallery-placeholder">📸</div>
+                    <p>Memory #1</p>
+                </div>
+                <div class="gallery-item glass-card" data-src="https://via.placeholder.com/600x400/3b82f6/ffffff?text=Memory+2">
+                    <div class="gallery-placeholder">📸</div>
+                    <p>Memory #2</p>
+                </div>
+                <div class="gallery-item glass-card" data-src="https://via.placeholder.com/600x400/ec4899/ffffff?text=Memory+3">
+                    <div class="gallery-placeholder">📸</div>
+                    <p>Memory #3</p>
+                </div>
+                <div class="gallery-item glass-card" data-src="https://via.placeholder.com/600x400/22c55e/ffffff?text=Memory+4">
+                    <div class="gallery-placeholder">📸</div>
+                    <p>Memory #4</p>
+                </div>
+            </div>
+            <div class="gallery-actions">
+                <a href="gallery.html" class="btn btn-outline">View All →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon-section" id="coming-soon">
+        <div class="container">
+            <div class="glass-card coming-soon-card">
+                <span class="coming-soon-emoji">📷</span>
+                <h2 class="coming-soon-title">More Memories Coming Soon!</h2>
+                <p class="coming-soon-text">The official event photos and videos will be available here after the reunion.</p>
+                <div class="coming-soon-countdown">
+                    <span>⏳ Stay Tuned!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-quote">"True friendship never ends. Reunion is just a reminder." 💛</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Facebook">📘 Facebook</a>
+                    <a href="#" class="social-link" aria-label="Instagram">📷 Instagram</a>
+                    <a href="#" class="social-link" aria-label="Messenger">💬 Messenger</a>
+                </div>
+                <p class="footer-copyright">© 2026 Reunion 2026. All rights reserved. Made with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">⬆️</button>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">✕</button>
+        <img src="" alt="Gallery Image" id="lightboxImg">
+    </div>
+
+    <script src="config.js"></script>
+    <script src="google-sheet.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lightbox
+            if (typeof initLightbox === 'function') {
+                initLightbox();
+            }
+
+            // Animate Progress Bars
+            if (typeof animateProgressBars === 'function') {
+                animateProgressBars();
+            }
+
+            // Countdown
+            const targetDate = new Date('2026-10-15T10:00:00').getTime();
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const diff = targetDate - now;
+                if (diff <= 0) {
+                    document.getElementById('countdown-days').textContent = '00';
+                    document.getElementById('countdown-hours').textContent = '00';
+                    document.getElementById('countdown-minutes').textContent = '00';
+                    document.getElementById('countdown-seconds').textContent = '00';
+                    return;
+                }
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById('countdown-days').textContent = String(days).padStart(2, '0');
+                document.getElementById('countdown-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('countdown-minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('countdown-seconds').textContent = String(seconds).padStart(2, '0');
+                document.getElementById('daysToGo').textContent = days;
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Animate stats numbers
+            document.querySelectorAll('.stat-number[data-target]').forEach(function(el) {
+                const target = parseInt(el.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 30;
+                const timer = setInterval(function() {
+                    current += increment;
+                    if (current >= target) {
+                        el.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = Math.floor(current);
+                    }
+                }, 50);
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile nav toggle
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            if (navToggle) {
+                navToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    mobileOverlay.classList.toggle('active');
+                });
+            }
+            if (mobileOverlay) {
+                mobileOverlay.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    mobileOverlay.classList.remove('active');
+                });
+            }
+
+            // Back to top
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            if (backToTop) {
+                backToTop.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxClose = document.getElementById('lightboxClose');
+            document.querySelectorAll('.gallery-item').forEach(function(item) {
+                item.addEventListener('click', function() {
+                    const src = item.getAttribute('data-src');
+                    if (src && lightbox && lightboxImg) {
+                        lightboxImg.src = src;
+                        lightbox.classList.add('active');
+                    }
+                });
+            });
+            if (lightboxClose) {
+                lightboxClose.addEventListener('click', function() {
+                    lightbox.classList.remove('active');
+                });
+            }
+            if (lightbox) {
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox) {
+                        lightbox.classList.remove('active');
+                    }
+                });
+            }
+
+            // Remove loading screen
+            setTimeout(function() {
+                const loader = document.getElementById('loading-screen');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(function() { loader.style.display = 'none'; }, 500);
+                }
+            }, 1200);
+        });
+    </script>
+</body>
+</html>
