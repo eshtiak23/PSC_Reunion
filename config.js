@@ -7,11 +7,11 @@
 const CONFIG = {
     // Google Sheets Spreadsheet ID (from the URL)
     // Example: https://docs.google.com/spreadsheets/d/SPREADSHEET_ID/edit
-    SPREADSHEET_ID: 'YOUR_SPREADSHEET_ID_HERE',
+    SPREADSHEET_ID: '1CpVKY7xs7w5TrG3vgx63WH4LaiW9-xZzDsPea0MUqs8',
 
     // Google Apps Script Web App URL (Deploy → New Deployment → Web App)
     // This is the URL you get after deploying your Apps Script
-    APPS_SCRIPT_URL: 'YOUR_APPS_SCRIPT_URL_HERE',
+    APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzbmrjBhZ7zRy9aDb5Z6h3-7R7juenXvRhmxnM-FWGuNCLRJRKisg85QfbJakrJ_Aa6Og/exec',
 
     // Google Forms URL for food voting
     GOOGLE_FORM_URL: 'YOUR_GOOGLE_FORM_URL_HERE',
