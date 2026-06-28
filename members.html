@@ -3,243 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Reunion Management Website - Manage members, payments, and events for your reunion.">
-    <meta name="keywords" content="reunion, members, alumni, payment, budget, event management">
-    <meta name="author" content="Reunion Management">
-    <meta property="og:title" content="Members - Reunion Management">
-    <meta property="og:description" content="Manage reunion members and their payment status">
-    <meta property="og:type" content="website">
-    <title>Members - Reunion Management</title>
+    <meta name="description" content="Reunion 2026 - Our Member List">
+    <title>Members | Reunion 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
 </head>
 <body data-page="members">
 
     <!-- Loading Screen -->
-    <div id="loading-screen">
+    <div id="loading-screen" class="loading-screen">
         <div class="loader">
-            <div class="loader-spinner"></div>
+            <div class="spinner"></div>
             <p>Loading...</p>
         </div>
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">🎓</span>
-                <span class="logo-text">Reunion</span>
-            </a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="members.html" class="nav-link active">Members</a>
-                </li>
-                <li class="nav-item">
-                    <a href="payments.html" class="nav-link">Payments</a>
-                </li>
-                <li class="nav-item">
-                    <a href="budget.html" class="nav-link">Budget</a>
-                </li>
-                <li class="nav-item">
-                    <a href="menu.html" class="nav-link">Menu</a>
-                </li>
-                <li class="nav-item">
-                    <a href="hall-of-fame.html" class="nav-link">Hall of Fame</a>
-                </li>
-                <li class="nav-item">
-                    <a href="gallery.html" class="nav-link">Gallery</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">More <span class="dropdown-arrow">▾</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="committee.html">Committee</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="rules.html">Rules</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact Us</a>
-                </li>
-            </ul>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
+            <a href="index.html" class="nav-logo">🎉 Reunion 2026</a>
+            <div class="nav-links" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="members.html" class="nav-link active">Members</a>
+                <a href="payments.html" class="nav-link">Payments</a>
+                <a href="gallery.html" class="nav-link">Memories</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
             </button>
         </div>
+        <div class="mobile-overlay" id="nav-overlay"></div>
     </nav>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="nav-overlay" id="nav-overlay"></div>
-
     <!-- Page Header -->
-    <header class="page-header">
-        <div class="header-content">
-            <h1 class="page-title">Members</h1>
-            <p class="page-subtitle">Our Reunion Squad</p>
+    <header class="page-header-new">
+        <div class="container">
+            <h1>👥 Our Squad</h1>
+            <p>The amazing people making this reunion happen</p>
         </div>
     </header>
 
-    <!-- Search and Filter Bar -->
-    <section class="filter-section">
+    <!-- Members Grid -->
+    <section class="section-home">
         <div class="container">
-            <div class="filter-bar">
-                <div class="search-box">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="member-search" class="search-input" placeholder="Search members...">
+            <div class="members-grid-new">
+
+                <div class="member-card-new">
+                    <div class="member-avatar-new" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">I</div>
+                    <h3 class="member-name-new">Istiak Ahmed</h3>
+                    <p class="member-phone-new">📞 +8801712345678</p>
+                    <span class="member-paid-badge">✅ Paid ৳1,000</span>
                 </div>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="paid">Paid</button>
+
+                <div class="member-card-new">
+                    <div class="member-avatar-new" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">S</div>
+                    <h3 class="member-name-new">Sabbir Hossain</h3>
+                    <p class="member-phone-new">📞 +8801812345678</p>
+                    <span class="member-paid-badge">✅ Paid ৳1,000</span>
                 </div>
+
+                <div class="member-card-new">
+                    <div class="member-avatar-new" style="background: linear-gradient(135deg, #ec4899, #db2777);">N</div>
+                    <h3 class="member-name-new">Nusrat Jahan</h3>
+                    <p class="member-phone-new">📞 +8801912345678</p>
+                    <span class="member-paid-badge">✅ Paid ৳1,000</span>
+                </div>
+
+                <div class="member-card-new">
+                    <div class="member-avatar-new" style="background: linear-gradient(135deg, #f97316, #ea580c);">F</div>
+                    <h3 class="member-name-new">Farhana Akter</h3>
+                    <p class="member-phone-new">📞 +8801512345678</p>
+                    <span class="member-paid-badge">✅ Paid ৳1,000</span>
+                </div>
+
+                <div class="member-card-new">
+                    <div class="member-avatar-new" style="background: linear-gradient(135deg, #22c55e, #16a34a);">S</div>
+                    <h3 class="member-name-new">Sumaiya Islam</h3>
+                    <p class="member-phone-new">📞 +8801212345678</p>
+                    <span class="member-paid-badge">✅ Paid ৳1,000</span>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Members Grid -->
-    <main class="members-section">
-        <div class="container">
-            <div id="members-grid" class="members-grid">
-
-                <!-- Member Card 1 -->
-                <div class="member-card" data-status="paid">
-                    <div class="member-avatar">I</div>
-                    <h3 class="member-name">Istiak Ahmed</h3>
-                    <p class="member-phone">📞 +8801712345678</p>
-                    <span class="badge badge-paid">Paid</span>
-                    <div class="member-payment">
-                        <div class="payment-row">
-                            <span class="payment-label">Paid:</span>
-                            <span class="payment-value">৳1000</span>
-                        </div>
-                        <div class="payment-row">
-                            <span class="payment-label">Due:</span>
-                            <span class="payment-value">৳0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member Card 2 -->
-                <div class="member-card" data-status="paid">
-                    <div class="member-avatar">S</div>
-                    <h3 class="member-name">Sabbir Hossain</h3>
-                    <p class="member-phone">📞 +8801812345678</p>
-                    <span class="badge badge-paid">Paid</span>
-                    <div class="member-payment">
-                        <div class="payment-row">
-                            <span class="payment-label">Paid:</span>
-                            <span class="payment-value">৳1000</span>
-                        </div>
-                        <div class="payment-row">
-                            <span class="payment-label">Due:</span>
-                            <span class="payment-value">৳0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member Card 3 -->
-                <div class="member-card" data-status="paid">
-                    <div class="member-avatar">N</div>
-                    <h3 class="member-name">Nusrat Jahan</h3>
-                    <p class="member-phone">📞 +8801912345678</p>
-                    <span class="badge badge-paid">Paid</span>
-                    <div class="member-payment">
-                        <div class="payment-row">
-                            <span class="payment-label">Paid:</span>
-                            <span class="payment-value">৳1000</span>
-                        </div>
-                        <div class="payment-row">
-                            <span class="payment-label">Due:</span>
-                            <span class="payment-value">৳0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member Card 4 -->
-                <div class="member-card" data-status="paid">
-                    <div class="member-avatar">F</div>
-                    <h3 class="member-name">Farhana Akter</h3>
-                    <p class="member-phone">📞 +8801512345678</p>
-                    <span class="badge badge-paid">Paid</span>
-                    <div class="member-payment">
-                        <div class="payment-row">
-                            <span class="payment-label">Paid:</span>
-                            <span class="payment-value">৳1000</span>
-                        </div>
-                        <div class="payment-row">
-                            <span class="payment-label">Due:</span>
-                            <span class="payment-value">৳0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member Card 5 -->
-                <div class="member-card" data-status="paid">
-                    <div class="member-avatar">S</div>
-                    <h3 class="member-name">Sumaiya Islam</h3>
-                    <p class="member-phone">📞 +8801212345678</p>
-                    <span class="badge badge-paid">Paid</span>
-                    <div class="member-payment">
-                        <div class="payment-row">
-                            <span class="payment-label">Paid:</span>
-                            <span class="payment-value">৳1000</span>
-                        </div>
-                        <div class="payment-row">
-                            <span class="payment-label">Due:</span>
-                            <span class="payment-value">৳0</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </main>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Reunion Management</h3>
-                    <p>Bringing our batch together again for a memorable reunion.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="members.html">Members</a></li>
-                        <li><a href="payments.html">Payments</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p>📞 +8801XXXXXXXXX</p>
-                    <p>📧 info@reunion.com</p>
-                    <p>📍 Dhaka, Bangladesh</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Reunion Management. All rights reserved.</p>
-            </div>
+            <p class="footer-text">© 2026 Reunion 2026. Made with ❤️</p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
-
-    <!-- Toast Container -->
-    <div id="toast-container" class="toast-container"></div>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">↑</button>
 
     <script src="config.js"></script>
-    <script src="google-sheet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

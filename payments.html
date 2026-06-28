@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Reunion Management - Payment Dashboard for tracking reunion contributions">
-    <meta name="keywords" content="reunion, payments, contributions, dashboard, management">
-    <meta name="author" content="Reunion Management Team">
-    <title>Payment Dashboard | Reunion Management</title>
+    <meta name="description" content="Reunion 2026 - Payment Dashboard">
+    <title>Payments | Reunion 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
 </head>
@@ -18,253 +16,99 @@
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <div class="loader">
-            <div class="loader-ring"></div>
-            <p class="loader-text">Loading...</p>
+            <div class="spinner"></div>
+            <p>Loading...</p>
         </div>
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">Reunion</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="members.html" class="nav-link">Members</a></li>
-                <li><a href="payments.html" class="nav-link active">Payments</a></li>
-                <li><a href="budget.html" class="nav-link">Budget</a></li>
-                <li><a href="menu.html" class="nav-link">Menu</a></li>
-                <li><a href="hall-of-fame.html" class="nav-link">Hall of Fame</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li class="nav-dropdown">
-                    <a href="#" class="nav-link">More <span class="dropdown-arrow">&#9662;</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="committee.html">Committee</a></li>
-                        <li><a href="rules.html">Rules</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
-            </ul>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
+            <a href="index.html" class="nav-logo">🎉 Reunion 2026</a>
+            <div class="nav-links" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="members.html" class="nav-link">Members</a>
+                <a href="payments.html" class="nav-link active">Payments</a>
+                <a href="gallery.html" class="nav-link">Memories</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
             </button>
         </div>
+        <div class="mobile-overlay" id="nav-overlay"></div>
     </nav>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="nav-overlay" id="nav-overlay"></div>
-
     <!-- Page Header -->
-    <header class="page-header">
+    <header class="page-header-new">
         <div class="container">
-            <h1 class="page-title">Payment Dashboard</h1>
-            <p class="page-subtitle">Track all reunion contributions</p>
+            <h1>💳 Payment Dashboard</h1>
+            <p>Track all reunion contributions</p>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <!-- Stats -->
+    <section class="stats-section">
         <div class="container">
+            <div class="stats-grid-payments">
+                <div class="stat-card-home">
+                    <span class="stat-icon-home">💰</span>
+                    <h3 id="total-collected">৳0</h3>
+                    <p class="stat-label-home">Total Collected</p>
+                </div>
+                <div class="stat-card-home">
+                    <span class="stat-icon-home">📊</span>
+                    <h3 id="total-count">0</h3>
+                    <p class="stat-label-home">Transactions</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Stats Row -->
-            <section class="stats-row">
-                <div class="stat-card glass-card">
-                    <div class="stat-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
-                        </svg>
-                    </div>
-                    <div class="stat-info">
-                        <h3>5,000</h3>
-                        <p>Total Collected</p>
-                    </div>
-                    <span class="stat-currency">৳</span>
-                </div>
-                <div class="stat-card glass-card">
-                    <div class="stat-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
-                        </svg>
-                    </div>
-                    <div class="stat-info">
-                        <h3>0</h3>
-                        <p>Remaining</p>
-                    </div>
-                    <span class="stat-currency">৳</span>
-                </div>
-                <div class="stat-card glass-card">
-                    <div class="stat-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-                        </svg>
-                    </div>
-                    <div class="stat-info">
-                        <h3>5</h3>
-                        <p>Total Members</p>
-                    </div>
-                </div>
-                <div class="stat-card glass-card">
-                    <div class="stat-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                        </svg>
-                    </div>
-                    <div class="stat-info">
-                        <h3>100%</h3>
-                        <p>Completion</p>
-                    </div>
-                </div>
-            </section>
+    <!-- Search -->
+    <section class="section-home">
+        <div class="container">
+            <div class="search-box-new">
+                <span class="search-icon-new">🔍</span>
+                <input type="text" id="payment-search" placeholder="Search by name...">
+            </div>
+        </div>
+    </section>
 
-            <!-- Progress Bar -->
-            <section class="progress-section glass-card">
-                <div class="progress-header">
-                    <h3>Payment Progress</h3>
-                    <span class="progress-percentage">100%</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 100%"></div>
-                </div>
-                <div class="progress-labels">
-                    <span>৳0</span>
-                    <span>Goal: ৳5,000</span>
-                </div>
-            </section>
-
-            <!-- Controls Section -->
-            <section class="controls-section">
-                <!-- Search Bar -->
-                <div class="search-container glass-card">
-                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"/>
-                        <path d="M21 21l-4.35-4.35"/>
-                    </svg>
-                    <input type="text" id="payment-search" class="search-input" placeholder="Search by name or phone...">
-                </div>
-
-                <!-- Filter & Sort Buttons -->
-                <div class="filter-sort-row">
-                    <div class="filter-buttons">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="paid">Paid</button>
-                    </div>
-                    <div class="sort-buttons">
-                        <button class="sort-btn active" data-sort="name">by Name</button>
-                        <button class="sort-btn" data-sort="amount">by Amount</button>
-                        <button class="sort-btn" data-sort="date">by Date</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Payments Table -->
-            <section class="table-section glass-card">
+    <!-- Payments Table -->
+    <section class="section-home">
+        <div class="container">
+            <div class="glass-card-home table-card">
                 <div class="table-responsive">
-                    <table id="payments-table" class="payments-table">
+                    <table id="payments-table" class="data-table-new">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
-                                <th>Phone</th>
-                                <th>Paid (৳)</th>
-                                <th>Due (৳)</th>
-                                <th>Date</th>
-                                <th>Status</th>
+                                <th>Date & Time</th>
+                                <th>Amount</th>
+                                <th>Method</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-status="paid">
-                                <td>1</td>
-                                <td>Istiak Ahmed</td>
-                                <td>+8801712345678</td>
-                                <td>1000</td>
-                                <td>0</td>
-                                <td>May 20, 2026</td>
-                                <td><span class="status-badge paid">Paid</span></td>
-                            </tr>
-                            <tr data-status="paid">
-                                <td>2</td>
-                                <td>Sabbir Hossain</td>
-                                <td>+8801812345678</td>
-                                <td>1000</td>
-                                <td>0</td>
-                                <td>May 21, 2026</td>
-                                <td><span class="status-badge paid">Paid</span></td>
-                            </tr>
-                            <tr data-status="paid">
-                                <td>3</td>
-                                <td>Nusrat Jahan</td>
-                                <td>+8801912345678</td>
-                                <td>1000</td>
-                                <td>0</td>
-                                <td>May 21, 2026</td>
-                                <td><span class="status-badge paid">Paid</span></td>
-                            </tr>
-                            <tr data-status="paid">
-                                <td>4</td>
-                                <td>Farhana Akter</td>
-                                <td>+8801512345678</td>
-                                <td>1000</td>
-                                <td>0</td>
-                                <td>May 22, 2026</td>
-                                <td><span class="status-badge paid">Paid</span></td>
-                            </tr>
-                            <tr data-status="paid">
-                                <td>5</td>
-                                <td>Sumaiya Islam</td>
-                                <td>+8801212345678</td>
-                                <td>1000</td>
-                                <td>0</td>
-                                <td>May 24, 2026</td>
-                                <td><span class="status-badge paid">Paid</span></td>
+                            <tr>
+                                <td colspan="5" class="loading-cell">Loading payments from Google Sheets...</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </section>
-
+            </div>
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Reunion Management</h3>
-                    <p>Bringing everyone back together for an unforgettable reunion experience.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="members.html">Members</a></li>
-                        <li><a href="payments.html">Payments</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: info@reunion.com</p>
-                    <p>Phone: +880 1XXXXXXXXX</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Reunion Management. All rights reserved.</p>
-            </div>
+            <p class="footer-text">© 2026 Reunion 2026. Made with ❤️</p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 15l-6-6-6 6"/>
-        </svg>
-    </button>
-
-    <!-- Toast Container -->
-    <div id="toast-container" class="toast-container"></div>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">↑</button>
 
     <script src="config.js"></script>
     <script src="google-sheet.js"></script>

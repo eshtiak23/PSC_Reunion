@@ -3,176 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memories Gallery | Reunion 2025</title>
-    <meta name="description" content="Browse captured moments of joy from our Reunion 2025 event. View photos, memories, and highlights.">
-    <meta name="keywords" content="reunion, gallery, photos, memories, 2025, school reunion">
-    <meta name="author" content="Reunion Committee">
-    <meta property="og:title" content="Memories Gallery | Reunion 2025">
-    <meta property="og:description" content="Captured moments of joy from our Reunion 2025 event.">
-    <meta property="og:type" content="website">
+    <meta name="description" content="Reunion 2026 - Memories Gallery">
+    <title>Memories | Reunion 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
 </head>
 <body data-page="gallery">
 
+    <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <div class="loader">
-            <div class="loader-spinner"></div>
+            <div class="spinner"></div>
             <p>Loading...</p>
         </div>
     </div>
 
-    <nav class="navbar">
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">🎓</span>
-                <span class="logo-text">Reunion 2025</span>
-            </a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
+            <a href="index.html" class="nav-logo">🎉 Reunion 2026</a>
+            <div class="nav-links" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="members.html" class="nav-link">Members</a>
+                <a href="payments.html" class="nav-link">Payments</a>
+                <a href="gallery.html" class="nav-link active">Memories</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
             </button>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
-                <li><a href="events.html" class="nav-link">Events</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
         </div>
+        <div class="mobile-overlay" id="nav-overlay"></div>
     </nav>
 
-    <div class="mobile-nav-overlay"></div>
-
-    <header class="page-header">
-        <div class="header-content">
-            <h1>Memories Gallery</h1>
-            <p>Captured moments of joy</p>
+    <!-- Page Header -->
+    <header class="page-header-new">
+        <div class="container">
+            <h1>📸 Memories Gallery</h1>
+            <p>Captured moments of joy and togetherness</p>
         </div>
     </header>
 
-    <main class="main-content">
-        <section class="gallery-section">
-            <div class="gallery-grid">
-                <div class="gallery-item" data-index="0">
-                    <div class="gallery-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
-                        <div class="gallery-overlay">
-                            <h3>Reunion 2025</h3>
-                            <p>The main reunion event</p>
-                        </div>
-                    </div>
+    <!-- Gallery Grid -->
+    <section class="section-home">
+        <div class="container">
+            <div class="gallery-grid-new">
+                <div class="gallery-item-new" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
+                    <span class="gallery-emoji">📸</span>
+                    <p>Group Photo</p>
                 </div>
-                <div class="gallery-item" data-index="1">
-                    <div class="gallery-image" style="background: linear-gradient(135deg, #2193b0, #6dd5ed);">
-                        <div class="gallery-overlay">
-                            <h3>Group Photo</h3>
-                            <p>Everyone together</p>
-                        </div>
-                    </div>
+                <div class="gallery-item-new" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                    <span class="gallery-emoji">🎉</span>
+                    <p>Celebration</p>
                 </div>
-                <div class="gallery-item" data-index="2">
-                    <div class="gallery-image" style="background: linear-gradient(135deg, #ee9ca7, #ffdde1);">
-                        <div class="gallery-overlay">
-                            <h3>Lunch Time</h3>
-                            <p>Sharing meals and stories</p>
-                        </div>
-                    </div>
+                <div class="gallery-item-new" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                    <span class="gallery-emoji">🍛</span>
+                    <p>Lunch Time</p>
                 </div>
-                <div class="gallery-item" data-index="3">
-                    <div class="gallery-image" style="background: linear-gradient(135deg, #f2994a, #f2c94c);">
-                        <div class="gallery-overlay">
-                            <h3>Games</h3>
-                            <p>Fun activities and competitions</p>
-                        </div>
-                    </div>
+                <div class="gallery-item-new" style="background: linear-gradient(135deg, #f97316, #ea580c);">
+                    <span class="gallery-emoji">🎮</span>
+                    <p>Fun Games</p>
                 </div>
-                <div class="gallery-item" data-index="4">
-                    <div class="gallery-image" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
-                        <div class="gallery-overlay">
-                            <h3>Music Night</h3>
-                            <p>Music and dance celebration</p>
-                        </div>
-                    </div>
+                <div class="gallery-item-new" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
+                    <span class="gallery-emoji">🎵</span>
+                    <p>Music Night</p>
                 </div>
-                <div class="gallery-item" data-index="5">
-                    <div class="gallery-image" style="background: linear-gradient(135deg, #7f7fd5, #86a8e7, #91eae4);">
-                        <div class="gallery-overlay">
-                            <h3>Selfie Time</h3>
-                            <p>Capturing memories together</p>
-                        </div>
-                    </div>
+                <div class="gallery-item-new" style="background: linear-gradient(135deg, #eab308, #ca8a04);">
+                    <span class="gallery-emoji">🤳</span>
+                    <p>Selfie Time</p>
                 </div>
-                <div class="gallery-item" data-index="6">
-                    <div class="gallery-image" style="background: linear-gradient(135deg, #f093fb, #f5576c, #fda085);">
-                        <div class="gallery-overlay">
-                            <h3>Prize Ceremony</h3>
-                            <p>Recognizing achievements</p>
-                        </div>
-                    </div>
+                <div class="gallery-item-new" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+                    <span class="gallery-emoji">🏆</span>
+                    <p>Prize Ceremony</p>
                 </div>
-                <div class="gallery-item" data-index="7">
-                    <div class="gallery-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe, #43e97b);">
-                        <div class="gallery-overlay">
-                            <h3>Goodbye Moments</h3>
-                            <p>Farewell until next time</p>
-                        </div>
-                    </div>
+                <div class="gallery-item-new" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">
+                    <span class="gallery-emoji">👋</span>
+                    <p>Goodbye</p>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <div id="lightbox" class="lightbox">
-        <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
-        <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
-        <button class="lightbox-next" aria-label="Next image">&#10095;</button>
-        <div class="lightbox-content">
-            <div class="lightbox-image"></div>
-            <div class="lightbox-caption">
-                <h3 class="lightbox-title"></h3>
-                <p class="lightbox-description"></p>
-                <span class="lightbox-counter"></span>
+            <div class="coming-soon-memories">
+                <span class="coming-soon-icon">📷</span>
+                <h3>More Memories Coming Soon!</h3>
+                <p>Official photos will be available after the reunion</p>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Reunion 2025</h3>
-                    <p>Celebrating bonds that time cannot break.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Us</h4>
-                    <p>Email: info@reunion2025.com</p>
-                    <p>Phone: +1 234 567 890</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Reunion Committee. All rights reserved.</p>
-            </div>
+        <div class="container">
+            <p class="footer-text">© 2026 Reunion 2026. Made with ❤️</p>
         </div>
     </footer>
 
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
-
-    <div id="toast-container" class="toast-container"></div>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">↑</button>
 
     <script src="config.js"></script>
-    <script src="google-sheet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

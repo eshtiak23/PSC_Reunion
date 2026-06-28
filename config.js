@@ -1,66 +1,25 @@
 // ============================================================
-// CONFIG.JS - Reunion Management System Configuration
-// ============================================================
-// Change these values to connect to your Google Sheets
+// CONFIG.JS - Reunion 2026 Configuration
 // ============================================================
 
 const CONFIG = {
-    // Google Sheets Spreadsheet ID (from the URL)
-    // Example: https://docs.google.com/spreadsheets/d/SPREADSHEET_ID/edit
     SPREADSHEET_ID: '1CpVKY7xs7w5TrG3vgx63WH4LaiW9-xZzDsPea0MUqs8',
-
-    // Google Apps Script Web App URL (Deploy → New Deployment → Web App)
-    // This is the URL you get after deploying your Apps Script
     APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzbmrjBhZ7zRy9aDb5Z6h3-7R7juenXvRhmxnM-FWGuNCLRJRKisg85QfbJakrJ_Aa6Og/exec',
 
-    // Google Forms URL for food voting
-    GOOGLE_FORM_URL: 'YOUR_GOOGLE_FORM_URL_HERE',
-
-    // Sheet Names (must match your Google Sheets tab names)
     SHEETS: {
-        MEMBERS: 'Members',
-        PAYMENTS: 'Payments',
-        BUDGET: 'Budget',
-        ANNOUNCEMENTS: 'Announcements',
-        GALLERY: 'Gallery',
-        FOOD_VOTES: 'FoodVotes',
-        HALL_OF_FAME: 'HallOfFame',
-        CONTACT: 'Contact'
+        PAYMENTS: 'Payments'
     },
 
-    // Reunion Event Details
     EVENT: {
         NAME: 'Reunion 2026',
         DATE: '2026-10-15T10:00:00',
         VENUE: 'Our Village',
-        TAGLINE: 'One Bond One Memory',
-        DESCRIPTION: 'Same people, same vibes, new memories!'
+        TAGLINE: 'One Bond One Memory'
     },
 
-    // Admin Password (change this!)
-    ADMIN_PASSWORD: 'reunion2026',
-
-    // Total Budget Amount
+    TOTAL_MEMBERS: 20,
     TOTAL_BUDGET: 25000,
-
-    // Currency
-    CURRENCY: '৳',
-
-    // Social Links
-    SOCIAL: {
-        FACEBOOK: 'https://facebook.com/your-group',
-        WHATSAPP: 'https://wa.me/8801XXXXXXXXX',
-        MESSENGER: 'https://m.me/your-profile',
-        PHONE: '+8801XXXXXXXXX'
-    },
-
-    // Organizer Info
-    ORGANIZER: {
-        NAME: 'Istiak Ahmed',
-        PHONE: '+8801XXXXXXXXX',
-        EMAIL: 'organizer@email.com'
-    }
+    CURRENCY: '৳'
 };
 
-// Freeze config to prevent accidental modification
 Object.freeze(CONFIG);
