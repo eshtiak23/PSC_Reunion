@@ -418,24 +418,29 @@ input { border: none; outline: none; font-family: inherit; }
     font-weight: 600; font-size: 0.88rem;
     margin-bottom: 6px;
 }
-.member-mini-status {
-    font-size: 0.75rem; font-weight: 600;
-    padding: 3px 10px; border-radius: 12px;
-}
-.member-mini-status.paid {
-    background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
+
+/* ========== MEMBER COUNT BADGE ========== */
+.member-count-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-top: 12px;
+    position: relative;
 }
 
 /* ========== MEMBERS PAGE ========== */
 .members-grid-new {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px;
 }
 .member-card-new {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 28px; text-align: center;
+    padding: 28px 20px; text-align: center;
     transition: all 0.3s;
     box-shadow: var(--shadow);
 }
@@ -443,28 +448,40 @@ input { border: none; outline: none; font-family: inherit; }
     transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
 }
-.member-avatar-new {
-    width: 70px; height: 70px;
-    border-radius: 50%;
+.member-photo-wrap {
+    position: relative;
+    width: 80px; height: 80px;
     margin: 0 auto 14px;
+}
+.member-avatar-new {
+    width: 80px; height: 80px;
+    border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     color: white; font-weight: 800; font-size: 1.5rem;
     border: 3px solid rgba(255,255,255,0.3);
 }
+.photo-upload-btn {
+    position: absolute;
+    bottom: -2px; right: -2px;
+    width: 28px; height: 28px;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.photo-upload-btn:hover {
+    background: var(--purple);
+    border-color: var(--purple);
+    transform: scale(1.1);
+}
 .member-name-new {
     font-family: var(--font-display);
-    font-size: 1.05rem; font-weight: 700;
+    font-size: 0.92rem; font-weight: 700;
     margin-bottom: 4px;
-}
-.member-phone-new {
-    font-size: 0.82rem; color: var(--text-muted); margin-bottom: 10px;
-}
-.member-paid-badge {
-    display: inline-block;
-    background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
-    padding: 4px 14px; border-radius: 20px;
-    font-size: 0.8rem; font-weight: 600;
 }
 
 /* ========== SEARCH ========== */
