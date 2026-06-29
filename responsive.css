@@ -1,5 +1,93 @@
-/* responsive.css - kept minimal, main responsive styles are in style.css */
+/* responsive.css - Additional responsive utilities */
+
+/* Print Styles */
 @media print {
     .navbar, .back-to-top, .footer, .loading-screen { display: none !important; }
     body { background: white; color: black; }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .info-card:hover,
+    .stat-card-home:hover,
+    .member-mini-card:hover,
+    .cd-item:hover,
+    .hero-btn-primary:hover,
+    .hero-btn-outline:hover {
+        transform: none;
+    }
+}
+
+/* Safe area for notched phones */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .hero-new {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    .footer {
+        padding-bottom: calc(30px + env(safe-area-inset-bottom));
+    }
+}
+
+/* Very small screens (320px and below) */
+@media (max-width: 360px) {
+    .hero-big-title { font-size: 1.8rem; }
+    .hero-badge-new { font-size: 0.8rem; padding: 6px 16px; }
+    .hero-tagline { font-size: 0.8rem; padding: 8px 20px; }
+    .hero-funny { font-size: 0.85rem; }
+    .hero-cta-text { font-size: 0.8rem; }
+    .cd-item { min-width: 55px; padding: 10px 8px; }
+    .countdown-number { font-size: 1.3rem; }
+    .cd-label { font-size: 0.55rem; }
+    .info-card { padding: 12px 14px; }
+    .info-card-text h4 { font-size: 0.85rem; }
+    .info-card-text p { font-size: 0.75rem; }
+    .hero-btn-primary, .hero-btn-outline {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape mode on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-new {
+        min-height: auto;
+        padding: 100px 0 40px;
+    }
+    .hero-content {
+        padding: 80px 20px 40px;
+    }
+    .scroll-indicator { display: none; }
+}
+
+/* Tablets in landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .hero-content {
+        max-width: 50%;
+    }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-new {
+        background-size: cover;
+    }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .scroll-arrow { animation: none; }
+    .nav-logo-emoji { animation: none; }
+}
+
+/* Dark mode support (already dark, but ensure consistency) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0a061e;
+        --bg-card: rgba(255, 255, 255, 0.06);
+    }
 }
