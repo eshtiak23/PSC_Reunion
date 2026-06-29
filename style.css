@@ -168,7 +168,7 @@ input { border: none; outline: none; font-family: inherit; }
     display: flex; align-items: center;
     position: relative;
     overflow: hidden;
-    background: url('bg.jpg') center/cover no-repeat;
+    background: url('bg.png') center/cover no-repeat;
 }
 .hero-new::before {
     content: '';
