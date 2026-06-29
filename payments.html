@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Reunion 2026 - Payment Dashboard">
+    <meta name="description" content="Reunion 2026 - Payments">
     <title>Payments | Reunion 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,60 +45,97 @@
     <!-- Page Header -->
     <header class="page-header-new">
         <div class="container">
-            <h1>💳 Payment Dashboard</h1>
-            <p>Track all reunion contributions</p>
+            <h1>💳 Payments</h1>
+            <p>Pay your contribution and track history</p>
         </div>
     </header>
 
-    <!-- Stats -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid-payments">
-                <div class="stat-card-home">
-                    <span class="stat-icon-home">💰</span>
-                    <h3 id="total-collected">৳0</h3>
-                    <p class="stat-label-home">Total Collected</p>
-                </div>
-                <div class="stat-card-home">
-                    <span class="stat-icon-home">📊</span>
-                    <h3 id="total-count">0</h3>
-                    <p class="stat-label-home">Transactions</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Search -->
+    <!-- Payment Tabs -->
     <section class="section-home">
         <div class="container">
-            <div class="search-box-new">
-                <span class="search-icon-new">🔍</span>
-                <input type="text" id="payment-search" placeholder="Search by name...">
+            <div class="payment-tabs">
+                <button class="payment-tab active" data-tab="pay">💰 Pay Now</button>
+                <button class="payment-tab" data-tab="history">📋 History</button>
             </div>
-        </div>
-    </section>
 
-    <!-- Payments Table -->
-    <section class="section-home">
-        <div class="container">
-            <div class="glass-card-home table-card">
-                <div class="table-responsive">
-                    <table id="payments-table" class="data-table-new">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Date & Time</th>
-                                <th>Amount</th>
-                                <th>Method</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="5" class="loading-cell">Loading payments from Google Sheets...</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- Tab 1: Pay Now -->
+            <div class="payment-tab-content active" id="tab-pay">
+                <div class="payment-phone-card">
+                    <div class="payment-phone-icon">📱</div>
+                    <h2>Send Money To</h2>
+                    <div class="payment-phone-number" id="payment-phone">
+                        <span id="phone-text">01989984061</span>
+                        <button class="copy-btn" id="copy-phone" title="Copy number">📋</button>
+                    </div>
+                    <div class="payment-methods">
+                        <span class="method-pill method-bkash">bKash</span>
+                        <span class="method-pill method-nagad">Nagad</span>
+                        <span class="method-pill method-rocket">Rocket</span>
+                    </div>
+                    <div class="payment-min">
+                        Minimum Amount: <strong>৳100</strong>
+                    </div>
+                </div>
+
+                <div class="payment-guidelines">
+                    <h3>📌 Guidelines</h3>
+                    <ul>
+                        <li>Use your <strong>full name</strong> as reference when paying</li>
+                        <li>Minimum payment amount is <strong>৳100</strong></li>
+                        <li>You can pay in multiple installments</li>
+                        <li>After paying, your name will appear in History</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tab 2: History -->
+            <div class="payment-tab-content" id="tab-history">
+                <!-- Summary -->
+                <div class="payment-summary">
+                    <div class="summary-card">
+                        <span class="summary-icon">💰</span>
+                        <h3 id="total-collected">৳0</h3>
+                        <p>Total Collected</p>
+                    </div>
+                    <div class="summary-card">
+                        <span class="summary-icon">👥</span>
+                        <h3 id="total-count">0</h3>
+                        <p>People Paid</p>
+                    </div>
+                </div>
+
+                <!-- Month Filters -->
+                <div class="month-filters">
+                    <button class="month-filter active" data-month="all">All</button>
+                    <button class="month-filter" data-month="June">June</button>
+                    <button class="month-filter" data-month="July">July</button>
+                    <button class="month-filter" data-month="August">August</button>
+                    <button class="month-filter" data-month="September">September</button>
+                    <button class="month-filter" data-month="October">October</button>
+                </div>
+
+                <!-- Payment List -->
+                <div class="payment-list" id="payment-list">
+                    <p class="loading-text">Loading payments...</p>
+                </div>
+
+                <!-- Hall of Fame -->
+                <div class="hall-of-fame" id="hall-of-fame" style="display: none;">
+                    <h2>🏆 Hall of Fame</h2>
+                    <div class="fame-grid">
+                        <div class="fame-card fame-first" id="fame-first">
+                            <span class="fame-badge">⚡ First to Pay</span>
+                            <div class="fame-avatar">🥇</div>
+                            <h4 id="first-payer-name">-</h4>
+                            <p id="first-payer-date">-</p>
+                        </div>
+                        <div class="fame-card fame-top" id="fame-top">
+                            <span class="fame-badge">👑 Most Paid</span>
+                            <div class="fame-avatar">💎</div>
+                            <h4 id="top-payer-name">-</h4>
+                            <p id="top-payer-amount">-</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -115,7 +152,6 @@
     <button class="back-to-top" id="backToTop">↑</button>
 
     <script src="config.js"></script>
-    <script src="google-sheet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

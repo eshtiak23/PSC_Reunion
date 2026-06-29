@@ -912,6 +912,311 @@ input { border: none; outline: none; font-family: inherit; }
     box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5);
 }
 
+/* ========== PAYMENT TABS ========== */
+.payment-tabs {
+    display: flex; gap: 8px; margin-bottom: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 6px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.payment-tab {
+    flex: 1; padding: 14px 20px;
+    background: transparent;
+    border: none; border-radius: 12px;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    font-size: 0.95rem; font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.payment-tab:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.05);
+}
+.payment-tab.active {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+.payment-tab-content {
+    display: none;
+}
+.payment-tab-content.active {
+    display: block;
+    animation: fadeInUp 0.4s ease;
+}
+
+/* ========== PAY NOW TAB ========== */
+.payment-phone-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.payment-phone-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+.payment-phone-card h2 {
+    font-family: var(--font-display);
+    font-size: 1.3rem; font-weight: 700;
+    color: var(--text-sec);
+    margin-bottom: 16px;
+}
+.payment-phone-number {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 16px 24px;
+    margin-bottom: 20px;
+}
+#phone-text {
+    font-family: var(--font-display);
+    font-size: 1.8rem; font-weight: 800;
+    color: #fff;
+    letter-spacing: 2px;
+}
+.copy-btn {
+    background: rgba(168, 85, 247, 0.2);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.copy-btn:hover {
+    background: rgba(168, 85, 247, 0.4);
+    transform: scale(1.05);
+}
+.copy-btn.copied {
+    background: rgba(34, 197, 94, 0.3);
+    border-color: rgba(34, 197, 94, 0.5);
+}
+.payment-methods {
+    display: flex; justify-content: center; gap: 10px;
+    margin-bottom: 16px;
+}
+.method-pill {
+    padding: 8px 18px; border-radius: 20px;
+    font-size: 0.85rem; font-weight: 600;
+}
+.method-pill.method-bkash {
+    background: rgba(236, 72, 153, 0.15);
+    color: #f472b6;
+    border: 1px solid rgba(236, 72, 153, 0.3);
+}
+.method-pill.method-nagad {
+    background: rgba(249, 115, 22, 0.15);
+    color: #fb923c;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+.method-pill.method-rocket {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+.payment-min {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+.payment-min strong {
+    color: var(--pink);
+}
+
+/* Guidelines */
+.payment-guidelines {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.payment-guidelines h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem; font-weight: 700;
+    margin-bottom: 14px;
+}
+.payment-guidelines ul {
+    list-style: none; padding: 0;
+}
+.payment-guidelines li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: var(--text-sec);
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.payment-guidelines li:last-child { border-bottom: none; }
+.payment-guidelines li::before {
+    content: '✓';
+    position: absolute; left: 0;
+    color: var(--green);
+    font-weight: 700;
+}
+
+/* ========== HISTORY TAB ========== */
+.payment-summary {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin-bottom: 24px;
+}
+.summary-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px; text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.summary-icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+.summary-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem; font-weight: 800;
+    color: var(--purple);
+    margin-bottom: 4px;
+}
+.summary-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Month Filters */
+.month-filters {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.month-filter {
+    padding: 10px 18px; border-radius: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem; font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.month-filter:hover {
+    color: var(--text);
+    border-color: rgba(168, 85, 247, 0.3);
+}
+.month-filter.active {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: #fff;
+    border-color: transparent;
+}
+
+/* Payment List */
+.payment-list {
+    margin-bottom: 32px;
+}
+.payment-history-card {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s;
+}
+.payment-history-card:hover {
+    transform: translateX(4px);
+    border-color: rgba(168, 85, 247, 0.3);
+}
+.payment-history-left {
+    display: flex; align-items: center; gap: 14px;
+}
+.payment-history-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 700; font-size: 1rem;
+}
+.payment-history-info h4 {
+    font-family: var(--font-display);
+    font-size: 0.95rem; font-weight: 600;
+    margin-bottom: 2px;
+}
+.payment-history-info p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+.payment-history-right {
+    display: flex; align-items: center; gap: 10px;
+}
+.payment-history-amount {
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 1rem;
+    color: var(--green);
+}
+
+/* ========== HALL OF FAME ========== */
+.hall-of-fame {
+    margin-top: 40px;
+}
+.hall-of-fame h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem; font-weight: 800;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.fame-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.fame-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s;
+}
+.fame-card:hover {
+    transform: translateY(-4px);
+}
+.fame-first {
+    border-color: rgba(234, 179, 8, 0.3);
+    background: linear-gradient(135deg, rgba(234, 179, 8, 0.08), rgba(234, 179, 8, 0.02));
+}
+.fame-top {
+    border-color: rgba(168, 85, 247, 0.3);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(168, 85, 247, 0.02));
+}
+.fame-badge {
+    display: inline-block;
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 0.78rem; font-weight: 600;
+    margin-bottom: 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.fame-avatar {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+.fame-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.2rem; font-weight: 700;
+    margin-bottom: 4px;
+}
+.fame-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
 /* ========== ANIMATIONS ========== */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(25px); }
@@ -965,6 +1270,10 @@ input { border: none; outline: none; font-family: inherit; }
     .cd-item { min-width: 70px; padding: 14px 14px; }
     .countdown-number { font-size: 1.8rem; }
     .cd-separator { font-size: 1.4rem; }
+    .payment-phone-number { flex-direction: column; gap: 10px; }
+    #phone-text { font-size: 1.4rem; }
+    .fame-grid { grid-template-columns: 1fr; }
+    .payment-summary { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
@@ -988,4 +1297,14 @@ input { border: none; outline: none; font-family: inherit; }
     .cd-separator { font-size: 1.2rem; }
     .cd-label { font-size: 0.6rem; letter-spacing: 0.5px; }
     .countdown-title { font-size: 0.95rem; }
+    .payment-tabs { flex-direction: column; }
+    .payment-tab { padding: 12px 16px; font-size: 0.9rem; }
+    .payment-phone-card { padding: 30px 20px; }
+    #phone-text { font-size: 1.2rem; letter-spacing: 1px; }
+    .payment-methods { flex-wrap: wrap; }
+    .month-filters { gap: 6px; }
+    .month-filter { padding: 8px 14px; font-size: 0.8rem; }
+    .payment-history-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .payment-history-right { width: 100%; justify-content: space-between; }
+    .fame-card { padding: 24px 16px; }
 }
