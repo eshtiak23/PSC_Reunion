@@ -341,35 +341,12 @@ function initMonthFilter() {
 function initPage() {
     var page = document.body.dataset.page;
 
-    if (page === 'home') {
-        fetchPayments().then(function(data) {
-            renderHomePayments(data);
-        });
-    }
-
     if (page === 'payments') {
         fetchPayments().then(function(data) {
             paymentData = data;
             renderPaymentsList(data, 'all');
             renderHallOfFame(data);
             initMonthFilter();
-        });
-    }
-
-    if (page === 'home') {
-        document.querySelectorAll('.stat-number[data-target]').forEach(function(el) {
-            var target = parseInt(el.getAttribute('data-target'));
-            var current = 0;
-            var increment = target / 40;
-            var timer = setInterval(function() {
-                current += increment;
-                if (current >= target) {
-                    el.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    el.textContent = Math.floor(current);
-                }
-            }, 40);
         });
     }
 }
