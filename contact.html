@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reunion 2026 - Contact Us">
+    <title>Contact | Reunion 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body data-page="contact">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-emoji">🎊</span>
+                <span>PSC <span class="logo-highlight">Reunion</span></span>
+            </a>
+            <div class="nav-links" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="members.html" class="nav-link">Members</a>
+                <a href="payments.html" class="nav-link">Payment</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <a href="contact.html" class="nav-join-btn">👥 Join Us</a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-overlay" id="nav-overlay"></div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header-new">
+        <div class="container">
+            <h1>📞 Contact Us</h1>
+            <p>Got questions? We're here to help!</p>
+        </div>
+    </header>
+
+    <!-- Contact Content -->
+    <section class="section-home">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <span class="contact-icon">📍</span>
+                    <h3>Address</h3>
+                    <p>PSC School Campus, Our Village, Bangladesh</p>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-icon">📱</span>
+                    <h3>Phone</h3>
+                    <p>+880 1XXX-XXXXXX</p>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-icon">💬</span>
+                    <h3>WhatsApp</h3>
+                    <p>Join our reunion group</p>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-icon">📧</span>
+                    <h3>Email</h3>
+                    <p>reunion2026@psc.com</p>
+                </div>
+            </div>
+
+            <div class="contact-message-box">
+                <h2>✉️ Send us a Message</h2>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Your Name" class="form-input" required>
+                        <input type="email" placeholder="Your Email" class="form-input" required>
+                    </div>
+                    <input type="text" placeholder="Subject" class="form-input" required>
+                    <textarea placeholder="Your Message..." class="form-textarea" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-hero-primary form-submit-btn">🚀 Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2026 PSC Reunion. Made with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
