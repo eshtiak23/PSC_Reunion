@@ -10,8 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initCountdown();
     initBackToTop();
     initPage();
-    initPaymentTabs();
-    initCopyPhone();
 });
 
 // ========== LOADING SCREEN ==========
@@ -187,6 +185,23 @@ function fetchPayments() {
         });
 }
 
+// ========== RENDER HOME STATS ==========
+function renderHomeStats(data) {
+    var total = 0;
+    var count = 0;
+    if (data && data.length) {
+        data.forEach(function(row) {
+            total += parseFloat(row.amount) || 0;
+            count++;
+        });
+    }
+
+    var totalEl = document.getElementById('home-total-collected');
+    var countEl = document.getElementById('home-total-paid');
+    if (totalEl) totalEl.textContent = '৳' + total.toLocaleString();
+    if (countEl) countEl.textContent = count;
+}
+
 // ========== RENDER HOME PAYMENTS ==========
 function renderHomePayments(data) {
     var container = document.getElementById('home-payments');
@@ -341,7 +356,20 @@ function initMonthFilter() {
 function initPage() {
     var page = document.body.dataset.page;
 
+    if (page === 'home') {
+        var memberCountEl = document.getElementById('home-total-members');
+        if (memberCountEl) {
+            memberCountEl.textContent = CONFIG.TOTAL_MEMBERS;
+        }
+
+        fetchPayments().then(function(data) {
+            renderHomeStats(data);
+        });
+    }
+
     if (page === 'payments') {
+        initPaymentTabs();
+        initCopyPhone();
         fetchPayments().then(function(data) {
             paymentData = data;
             renderPaymentsList(data, 'all');
