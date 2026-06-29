@@ -831,6 +831,15 @@ input { border: none; outline: none; font-family: inherit; }
     align-self: flex-start;
     border: none; cursor: pointer;
     font-family: var(--font-display);
+    padding: 16px 36px; border-radius: 30px;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: #fff; font-weight: 700; font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+}
+.form-submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5);
 }
 
 /* ========== GALLERY ========== */
