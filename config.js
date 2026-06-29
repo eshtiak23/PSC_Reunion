@@ -12,7 +12,7 @@ const CONFIG = {
 
     EVENT: {
         NAME: 'Reunion 2026',
-        DATE: '2026-10-15T10:00:00',
+        DATE: '2026-10-21T10:00:00',
         VENUE: 'Our Village',
         TAGLINE: 'One Bond One Memory'
     },
