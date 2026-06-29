@@ -45,49 +45,83 @@
     <!-- Page Header -->
     <header class="page-header-new">
         <div class="container">
-            <h1>📞 Contact Us</h1>
-            <p>Got questions? We're here to help!</p>
+            <h1>💬 Get In Touch</h1>
+            <p>Hit us up anytime — we're just a message away!</p>
         </div>
     </header>
 
     <!-- Contact Content -->
     <section class="section-home">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <span class="contact-icon">📍</span>
-                    <h3>Address</h3>
-                    <p>PSC School Campus, Our Village, Bangladesh</p>
+
+            <!-- Big Phone Card -->
+            <div class="contact-phone-hero">
+                <div class="contact-phone-glow"></div>
+                <span class="contact-phone-emoji">📱</span>
+                <h2>Call or Text Us</h2>
+                <div class="contact-phone-display">
+                    <span id="contact-phone-text">01989984061</span>
+                    <button class="copy-btn" id="copy-contact-phone" title="Copy number">📋</button>
                 </div>
-                <div class="contact-card">
-                    <span class="contact-icon">📱</span>
-                    <h3>Phone</h3>
-                    <p>+880 1XXX-XXXXXX</p>
-                </div>
-                <div class="contact-card">
-                    <span class="contact-icon">💬</span>
-                    <h3>WhatsApp</h3>
-                    <p>Join our reunion group</p>
-                </div>
-                <div class="contact-card">
-                    <span class="contact-icon">📧</span>
-                    <h3>Email</h3>
-                    <p>reunion2026@psc.com</p>
-                </div>
+                <p class="contact-phone-sub">Available on bKash, Nagad & Rocket</p>
             </div>
 
-            <div class="contact-message-box">
-                <h2>✉️ Send us a Message</h2>
-                <form class="contact-form">
-                    <div class="form-row">
-                        <input type="text" placeholder="Your Name" class="form-input" required>
-                        <input type="email" placeholder="Your Email" class="form-input" required>
+            <!-- Social Links Grid -->
+            <div class="contact-social-grid">
+
+                <a href="https://wa.me/8801989984061" target="_blank" rel="noopener" class="contact-social-card social-whatsapp">
+                    <div class="social-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     </div>
-                    <input type="text" placeholder="Subject" class="form-input" required>
-                    <textarea placeholder="Your Message..." class="form-textarea" rows="5" required></textarea>
-                    <button type="submit" class="hero-btn-primary form-submit-btn">🚀 Send Message</button>
-                </form>
+                    <div class="social-info">
+                        <h3>WhatsApp</h3>
+                        <p>Chat with us</p>
+                    </div>
+                    <span class="social-arrow">→</span>
+                </a>
+
+                <a href="https://web.facebook.com/eshtiak3.0" target="_blank" rel="noopener" class="contact-social-card social-facebook">
+                    <div class="social-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>Facebook</h3>
+                        <p>Eshtiak Ahmed</p>
+                    </div>
+                    <span class="social-arrow">→</span>
+                </a>
+
+                <a href="mailto:eshtiak4099@gmail.com" class="contact-social-card social-email">
+                    <div class="social-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>Email</h3>
+                        <p>eshtiak4099@gmail.com</p>
+                    </div>
+                    <span class="social-arrow">→</span>
+                </a>
+
+                <a href="tel:+8801989984061" class="contact-social-card social-phone">
+                    <div class="social-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>Phone</h3>
+                        <p>01989984061</p>
+                    </div>
+                    <span class="social-arrow">→</span>
+                </a>
+
             </div>
+
+            <!-- Fun message -->
+            <div class="contact-fun-box">
+                <span class="contact-fun-emoji">🎉</span>
+                <h3>Don't be shy!</h3>
+                <p>Whether it's about the reunion, payments, or just want to say hi — we're all ears. See you at the party!</p>
+            </div>
+
         </div>
     </section>
 
@@ -103,5 +137,41 @@
 
     <script src="config.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var copyBtn = document.getElementById('copy-contact-phone');
+            if (copyBtn) {
+                copyBtn.addEventListener('click', function() {
+                    var phoneText = document.getElementById('contact-phone-text');
+                    if (!phoneText) return;
+                    var phone = phoneText.textContent;
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(phone).then(function() {
+                            showContactCopyFeedback(copyBtn);
+                        }).catch(function() {
+                            var ta = document.createElement('textarea');
+                            ta.value = phone;
+                            ta.style.position = 'fixed';
+                            ta.style.opacity = '0';
+                            document.body.appendChild(ta);
+                            ta.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(ta);
+                            showContactCopyFeedback(copyBtn);
+                        });
+                    }
+                });
+            }
+            function showContactCopyFeedback(btn) {
+                var orig = btn.textContent;
+                btn.textContent = '✅';
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    btn.textContent = orig;
+                    btn.classList.remove('copied');
+                }, 2000);
+            }
+        });
+    </script>
 </body>
 </html>
