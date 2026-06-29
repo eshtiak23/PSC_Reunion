@@ -113,10 +113,10 @@ function renderPayments(data) {
     var html = '';
 
     data.forEach(function(row, i) {
-        var name = row.Name || row[0] || '';
-        var dateTime = row['Date & Time'] || row[1] || '';
-        var amount = parseFloat(row.Amount || row[2]) || 0;
-        var method = row.Method || row[3] || '';
+        var name = row.name || row.Name || row[0] || '';
+        var dateTime = (row.date || '') + (row.time ? ' ' + row.time : '') || row['Date & Time'] || row[1] || '';
+        var amount = parseFloat(row.amount || row.Amount || row[2]) || 0;
+        var method = row.method || row.Method || row[3] || '';
 
         total += amount;
 
@@ -156,9 +156,9 @@ function renderHomePayments(data) {
 
     var html = '';
     lastFive.forEach(function(row) {
-        var name = row.Name || row[0] || '';
-        var amount = parseFloat(row.Amount || row[2]) || 0;
-        var method = row.Method || row[3] || '';
+        var name = row.name || row.Name || row[0] || '';
+        var amount = parseFloat(row.amount || row.Amount || row[2]) || 0;
+        var method = row.method || row.Method || row[3] || '';
 
         var methodClass = 'method-default';
         if (method.toLowerCase().includes('bkash')) methodClass = 'method-bkash';
