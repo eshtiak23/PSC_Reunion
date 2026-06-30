@@ -4,6 +4,17 @@
 
 var paymentData = [];
 
+function throttle(fn, wait) {
+    var lastTime = 0;
+    return function() {
+        var now = Date.now();
+        if (now - lastTime >= wait) {
+            lastTime = now;
+            fn.apply(this, arguments);
+        }
+    };
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initLoadingScreen();
     initNavbar();
@@ -43,10 +54,10 @@ function initNavbar() {
         });
     }
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', throttle(function() {
         var nav = document.querySelector('.navbar');
         if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
-    });
+    }, 100));
 
     var currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-link').forEach(function(link) {
@@ -58,6 +69,12 @@ function initNavbar() {
 
 // ========== COUNTDOWN ==========
 function initCountdown() {
+    var d = document.getElementById('cd-days');
+    var h = document.getElementById('cd-hours');
+    var m = document.getElementById('cd-minutes');
+    var s = document.getElementById('cd-seconds');
+    if (!d && !h && !m && !s) return;
+
     var target = new Date(CONFIG.EVENT.DATE).getTime();
 
     function update() {
@@ -65,8 +82,7 @@ function initCountdown() {
         var diff = target - now;
 
         if (diff <= 0) {
-            var els = document.querySelectorAll('.countdown-number');
-            els.forEach(function(el) { el.textContent = '00'; });
+            [d, h, m, s].forEach(function(el) { if (el) el.textContent = '00'; });
             return;
         }
 
@@ -74,11 +90,6 @@ function initCountdown() {
         var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        var d = document.getElementById('cd-days');
-        var h = document.getElementById('cd-hours');
-        var m = document.getElementById('cd-minutes');
-        var s = document.getElementById('cd-seconds');
 
         if (d) d.textContent = String(days).padStart(2, '0');
         if (h) h.textContent = String(hours).padStart(2, '0');
@@ -95,9 +106,9 @@ function initBackToTop() {
     var btn = document.getElementById('backToTop');
     if (!btn) return;
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', throttle(function() {
         btn.classList.toggle('visible', window.scrollY > 400);
-    });
+    }, 100));
 
     btn.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -133,3 +133,24 @@
         --bg-card: rgba(255, 255, 255, 0.06);
     }
 }
+
+/* ========== MOBILE PERFORMANCE FIXES ========== */
+@media (max-width: 768px) {
+    /* Remove expensive backdrop-filter blur on cards */
+    .premium-member-card {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    /* Disable continuous logo animation */
+    .nav-logo-emoji {
+        animation: none;
+        filter: none;
+    }
+    /* Simplify hover states */
+    .premium-member-card:hover {
+        transform: none;
+    }
+    .premium-member-card::after {
+        display: none;
+    }
+}
