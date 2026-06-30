@@ -1582,6 +1582,8 @@ input { border: none; outline: none; font-family: inherit; }
     .contact-phone-display { padding: 14px 20px; }
     #contact-phone-text { font-size: 1.5rem; letter-spacing: 2px; }
     .contact-fun-box { padding: 28px 20px; }
+    .portfolio-card { padding: 28px 20px; }
+    .portfolio-avatar { width: 80px; height: 80px; }
     .page-header-new { padding: 100px 0 30px; }
     .page-header-new h1 { font-size: 1.6rem; }
     .cd-items { gap: 8px; flex-wrap: wrap; justify-content: center; }
@@ -1630,6 +1632,10 @@ input { border: none; outline: none; font-family: inherit; }
     .contact-fun-emoji { font-size: 2rem; }
     .contact-fun-box h3 { font-size: 1.1rem; }
     .contact-fun-box p { font-size: 0.82rem; }
+    .portfolio-card { padding: 24px 16px; border-radius: 20px; }
+    .portfolio-avatar { width: 70px; height: 70px; }
+    .portfolio-name { font-size: 1.05rem; }
+    .portfolio-btn { padding: 10px 22px; font-size: 0.88rem; }
     .cd-items { gap: 6px; }
     .cd-item { min-width: 60px; padding: 12px 10px; border-radius: 12px; }
     .countdown-number { font-size: 1.5rem; }
