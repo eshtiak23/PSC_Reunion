@@ -665,6 +665,7 @@ input { border: none; outline: none; font-family: inherit; }
     position: absolute;
     bottom: -4px; right: -4px;
     font-size: 1.3rem;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", sans-serif;
     background: var(--bg-card);
     border-radius: 50%;
     width: 32px; height: 32px;
