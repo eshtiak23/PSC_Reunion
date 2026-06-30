@@ -592,17 +592,17 @@ input { border: none; outline: none; font-family: inherit; }
 }
 
 /* ========== MEMBERS GRID COOL ========== */
-.members-grid-cool {
+.premium-members-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
 }
-.member-card-cool {
+.premium-member-card {
     position: relative;
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 28px 20px 22px;
+    border-radius: 24px;
+    padding: 30px 20px 24px;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: var(--shadow);
@@ -610,75 +610,127 @@ input { border: none; outline: none; font-family: inherit; }
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
-.member-card-cool::before {
+.premium-member-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 4px;
     background: linear-gradient(90deg, var(--accent), var(--accent2));
-    border-radius: 20px 20px 0 0;
+    border-radius: 24px 24px 0 0;
 }
-.member-card-cool:hover {
+.premium-member-card::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at center, color-mix(in srgb, var(--accent) 6%, transparent), transparent 50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.premium-member-card:hover::after {
+    opacity: 1;
+}
+.premium-member-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-    border-color: var(--accent);
+    box-shadow: 0 12px 40px color-mix(in srgb, var(--accent) 25%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
 }
-.member-card-cool:hover .member-avatar-cool {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 25px color-mix(in srgb, var(--accent) 40%, transparent);
+.pm-card-glow {
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 20%, transparent), transparent 70%);
+    pointer-events: none;
 }
-.member-card-top {
-    display: flex; align-items: center; justify-content: center;
+.pm-avatar-wrap {
     position: relative;
+    display: inline-block;
     margin-bottom: 14px;
 }
-.member-avatar-cool {
-    width: 72px; height: 72px;
+.pm-avatar {
+    width: 80px; height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-weight: 900; font-size: 1.6rem;
-    font-family: var(--font-display);
-    border: 3px solid rgba(255,255,255,0.2);
-    box-shadow: 0 4px 15px color-mix(in srgb, var(--accent) 30%, transparent);
+    border: 3px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 30%, transparent);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    object-fit: cover;
 }
-.member-number {
+.premium-member-card:hover .pm-avatar {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--accent);
+    box-shadow: 0 8px 30px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.pm-badge {
     position: absolute;
-    top: -4px; right: calc(50% - 48px);
-    background: var(--accent);
-    color: white;
-    font-size: 0.65rem; font-weight: 800;
-    padding: 2px 8px; border-radius: 10px;
-    letter-spacing: 0.5px;
+    bottom: -4px; right: -4px;
+    font-size: 1.3rem;
+    background: var(--bg-card);
+    border-radius: 50%;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.member-name-cool {
+.pm-name {
     font-family: var(--font-display);
     font-size: 1rem; font-weight: 700;
-    color: var(--text);
-    margin-bottom: 8px;
+    color: #fff;
+    margin-bottom: 4px;
+    position: relative;
+    z-index: 1;
 }
-.member-info-cool {
-    display: flex; flex-direction: column; gap: 4px;
-}
-.member-phone-cool {
+.pm-role {
     font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent2);
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+.pm-divider {
+    width: 40px; height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    margin: 0 auto 12px;
+    border-radius: 2px;
+    position: relative;
+    z-index: 1;
+}
+.pm-phone {
+    display: inline-block;
+    font-size: 0.8rem;
     color: var(--text-muted);
-    display: flex; align-items: center; justify-content: center; gap: 4px;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+}
+.pm-phone:hover {
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+    color: var(--accent2);
 }
 
 /* Staggered entrance animation */
-.member-card-cool:nth-child(1) { animation: memberPop 0.5s ease 0.05s backwards; }
-.member-card-cool:nth-child(2) { animation: memberPop 0.5s ease 0.1s backwards; }
-.member-card-cool:nth-child(3) { animation: memberPop 0.5s ease 0.15s backwards; }
-.member-card-cool:nth-child(4) { animation: memberPop 0.5s ease 0.2s backwards; }
-.member-card-cool:nth-child(5) { animation: memberPop 0.5s ease 0.25s backwards; }
-.member-card-cool:nth-child(6) { animation: memberPop 0.5s ease 0.3s backwards; }
-.member-card-cool:nth-child(7) { animation: memberPop 0.5s ease 0.35s backwards; }
-.member-card-cool:nth-child(8) { animation: memberPop 0.5s ease 0.4s backwards; }
-.member-card-cool:nth-child(9) { animation: memberPop 0.5s ease 0.45s backwards; }
-.member-card-cool:nth-child(10) { animation: memberPop 0.5s ease 0.5s backwards; }
-.member-card-cool:nth-child(11) { animation: memberPop 0.5s ease 0.55s backwards; }
+.premium-member-card:nth-child(1) { animation: memberPop 0.5s ease 0.05s backwards; }
+.premium-member-card:nth-child(2) { animation: memberPop 0.5s ease 0.1s backwards; }
+.premium-member-card:nth-child(3) { animation: memberPop 0.5s ease 0.15s backwards; }
+.premium-member-card:nth-child(4) { animation: memberPop 0.5s ease 0.2s backwards; }
+.premium-member-card:nth-child(5) { animation: memberPop 0.5s ease 0.25s backwards; }
+.premium-member-card:nth-child(6) { animation: memberPop 0.5s ease 0.3s backwards; }
+.premium-member-card:nth-child(7) { animation: memberPop 0.5s ease 0.35s backwards; }
+.premium-member-card:nth-child(8) { animation: memberPop 0.5s ease 0.4s backwards; }
+.premium-member-card:nth-child(9) { animation: memberPop 0.5s ease 0.45s backwards; }
+.premium-member-card:nth-child(10) { animation: memberPop 0.5s ease 0.5s backwards; }
+.premium-member-card:nth-child(11) { animation: memberPop 0.5s ease 0.55s backwards; }
+.premium-member-card:nth-child(12) { animation: memberPop 0.5s ease 0.6s backwards; }
+.premium-member-card:nth-child(13) { animation: memberPop 0.5s ease 0.65s backwards; }
+.premium-member-card:nth-child(14) { animation: memberPop 0.5s ease 0.7s backwards; }
+.premium-member-card:nth-child(15) { animation: memberPop 0.5s ease 0.75s backwards; }
 @keyframes memberPop {
     from { opacity: 0; transform: translateY(30px) scale(0.9); }
     to { opacity: 1; transform: translateY(0) scale(1); }

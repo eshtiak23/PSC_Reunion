@@ -10,12 +10,46 @@
 @media (hover: none) {
     .info-card:hover,
     .stat-card-home:hover,
-    .member-mini-card:hover,
-    .cd-item:hover,
-    .hero-btn-primary:hover,
-    .hero-btn-outline:hover {
+    .premium-member-card:hover,
+    .pm-avatar:hover {
         transform: none;
     }
+}
+
+/* Mobile responsive for premium member cards */
+@media (max-width: 768px) {
+    .premium-members-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 14px;
+    }
+    .premium-member-card {
+        padding: 24px 14px 20px;
+        border-radius: 20px;
+    }
+    .pm-avatar {
+        width: 68px; height: 68px;
+    }
+    .pm-name { font-size: 0.88rem; }
+    .pm-role { font-size: 0.75rem; }
+}
+@media (max-width: 480px) {
+    .premium-members-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .premium-member-card {
+        padding: 20px 10px 18px;
+        border-radius: 18px;
+    }
+    .pm-avatar {
+        width: 60px; height: 60px;
+    }
+    .pm-badge {
+        width: 26px; height: 26px; font-size: 1.1rem;
+    }
+    .pm-name { font-size: 0.82rem; }
+    .pm-role { font-size: 0.7rem; }
+    .pm-phone { font-size: 0.72rem; padding: 4px 10px; }
 }
 
 /* Safe area for notched phones */
@@ -45,6 +79,14 @@
         padding: 14px 24px;
         font-size: 0.9rem;
     }
+    .premium-members-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .pm-avatar { width: 52px; height: 52px; }
+    .pm-name { font-size: 0.78rem; }
+    .pm-role { font-size: 0.65rem; }
+    .pm-phone { font-size: 0.68rem; }
 }
 
 /* Landscape mode on mobile */
