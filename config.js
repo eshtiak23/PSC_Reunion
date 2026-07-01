@@ -17,7 +17,7 @@ const CONFIG = {
         GUIDELINE: 'Use your name as reference when paying'
     },
 
-    TOTAL_MEMBERS: 15,
+    TOTAL_MEMBERS: 17,
     TOTAL_BUDGET: 25000,
     CURRENCY: '৳'
 };
