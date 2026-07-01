@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavbar();
     initCountdown();
     initBackToTop();
+    initMusicPlayer();
     initPage();
 });
 
@@ -361,6 +362,90 @@ function initMonthFilter() {
             renderPaymentsList(paymentData, btn.dataset.month);
         });
     });
+}
+
+// ========== MUSIC PLAYER ==========
+function initMusicPlayer() {
+    var prompt = document.getElementById('musicPrompt');
+    var widget = document.getElementById('musicWidget');
+    var playBtn = document.getElementById('musicPlayBtn');
+    var skipBtn = document.getElementById('musicSkipBtn');
+    var toggleBtn = document.getElementById('musicToggle');
+    var audio = document.getElementById('bgMusic');
+
+    if (!prompt || !audio) return;
+
+    var isMobile = window.innerWidth <= 768;
+    var state = sessionStorage.getItem('musicChoice');
+
+    if (state === 'playing') {
+        prompt.style.display = 'none';
+        widget.style.display = 'block';
+        audio.play().then(function() {
+            toggleBtn.classList.add('playing');
+            toggleBtn.textContent = '⏸';
+        }).catch(function() {});
+    } else if (state === 'skipped') {
+        prompt.style.display = 'none';
+        widget.style.display = 'block';
+    } else {
+        if (isMobile) {
+            prompt.style.display = 'flex';
+            widget.style.display = 'none';
+        } else {
+            prompt.style.display = 'none';
+            widget.style.display = 'block';
+        }
+    }
+
+    if (playBtn) {
+        playBtn.addEventListener('click', function() {
+            audio.play().then(function() {
+                sessionStorage.setItem('musicChoice', 'playing');
+                prompt.style.opacity = '0';
+                prompt.style.transition = 'opacity 0.4s';
+                setTimeout(function() {
+                    prompt.style.display = 'none';
+                    widget.style.display = 'block';
+                    toggleBtn.classList.add('playing');
+                    toggleBtn.textContent = '⏸';
+                }, 400);
+            }).catch(function() {
+                sessionStorage.setItem('musicChoice', 'playing');
+                prompt.style.display = 'none';
+                widget.style.display = 'block';
+            });
+        });
+    }
+
+    if (skipBtn) {
+        skipBtn.addEventListener('click', function() {
+            sessionStorage.setItem('musicChoice', 'skipped');
+            prompt.style.opacity = '0';
+            prompt.style.transition = 'opacity 0.4s';
+            setTimeout(function() {
+                prompt.style.display = 'none';
+                widget.style.display = 'block';
+            }, 400);
+        });
+    }
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play().then(function() {
+                    toggleBtn.classList.add('playing');
+                    toggleBtn.textContent = '⏸';
+                    sessionStorage.setItem('musicChoice', 'playing');
+                }).catch(function() {});
+            } else {
+                audio.pause();
+                toggleBtn.classList.remove('playing');
+                toggleBtn.textContent = '🎵';
+                sessionStorage.setItem('musicChoice', 'skipped');
+            }
+        });
+    }
 }
 
 // ========== PAGE INIT ==========

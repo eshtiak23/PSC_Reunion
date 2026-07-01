@@ -323,6 +323,28 @@
             if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
         });
     })();
+
+    // Music Player
+    var musicPrompt = document.createElement('div');
+    musicPrompt.id = 'musicPrompt';
+    musicPrompt.className = 'music-prompt';
+    musicPrompt.style.display = 'none';
+    musicPrompt.innerHTML = '<div class="music-prompt-overlay"></div><div class="music-prompt-card"><div class="music-prompt-emoji">🎵</div><h2>Want to set the mood?</h2><p>Play our reunion soundtrack while you browse</p><button id="musicPlayBtn" class="music-play-btn">▶ Play Music</button><button id="musicSkipBtn" class="music-skip-btn">No thanks</button></div>';
+    document.body.appendChild(musicPrompt);
+
+    var musicWidget = document.createElement('div');
+    musicWidget.id = 'musicWidget';
+    musicWidget.className = 'music-widget';
+    musicWidget.style.display = 'none';
+    musicWidget.innerHTML = '<button id="musicToggle" class="music-toggle-btn">🎵</button>';
+    document.body.appendChild(musicWidget);
+
+    var bgMusic = document.createElement('audio');
+    bgMusic.id = 'bgMusic';
+    bgMusic.preload = 'none';
+    bgMusic.loop = true;
+    bgMusic.innerHTML = '<source src="BG.mp3" type="audio/mpeg">';
+    document.body.appendChild(bgMusic);
     </script>
 </body>
 </html>
